@@ -67,7 +67,9 @@ pcheck() {
 
 inb() { hsh-run "$HSH" -- /bin/sh -c "$1"; }
 inr() { hsh-run --rooter "$HSH" -- /bin/sh -c "$1"; }
-init() { hsh --initroot-only --packager="$PACKAGER" "$HSH"; }
+# Команды hasher обращаются к сетевому репозиторию; при разовом сбое повторяем один раз
+retry() { "$@" || { sleep 10 && "$@"; }; }
+init() { retry hsh --initroot-only --packager="$PACKAGER" "$HSH"; }
 # Запись сеанса: пробел, пробел, выход
 session() { (cd check && ./ptyrec.sh "$1" sample.txt "$2"); }
 body() { sed '1d;$d' "$1"; }
@@ -132,7 +134,7 @@ t4_fail_log() { grep -q 'packager name violation' logs/t4-build-fail.log; }
 t4_macros() { init && inb "grep -F '$PACKAGER' \$HOME/.rpmmacros"; }
 t4_devel() {
     local list
-    hsh-install "$HSH" libncurses-devel || return 1
+    retry hsh-install "$HSH" libncurses-devel || return 1
     list=$(inb 'rpm -qlv libncurses-devel') || return 1
     [ "$(echo "$list" | grep -c '\.h$')" -ge 1 ] && [ "$(echo "$list" | grep -c '^l.*\.so ')" -ge 1 ]
 }
@@ -142,7 +144,7 @@ t4_srpm() {
         mkdir -p "$ART" && cp -f "$HSH/chroot$SRC/RPM/SRPMS/$HELLO_NVR.src.rpm" "$ART/"
 }
 t4_rebuild() {
-    hsh --packager="$PACKAGER" "$HSH" "$ART/$HELLO_NVR.src.rpm" &&
+    retry hsh --packager="$PACKAGER" "$HSH" "$ART/$HELLO_NVR.src.rpm" &&
         [ "$(rpm -qp --qf '%{PACKAGER}' "$REPO/$ARCH/RPMS.hasher/$HELLO_NVR.noarch.rpm")" = "$PACKAGER" ]
 }
 
@@ -179,7 +181,7 @@ t6_fail() {
     ! inr "rpm -i /.in/$NVR.x86_64.rpm" 2> "$TMP/install.err" && grep -q 'libncurses\.so\.6' "$TMP/install.err"
 }
 t6_ok() {
-    hsh-install "$HSH" libncurses6 || return 1
+    retry hsh-install "$HSH" libncurses6 || return 1
     cp -f "$ART/manual/$NVR.x86_64.rpm" check/sample.txt check/ptyrec.sh "$HSH/chroot/.in/"
     inr "rpm -i /.in/$NVR.x86_64.rpm" && inb "rpm -q $PKG"
 }
@@ -191,7 +193,7 @@ t6_run() {
 
 # --- Задание 7 ---
 t7_build() {
-    hsh --packager="$PACKAGER" "$HSH" "$ART/manual/$NVR.src.rpm" &&
+    retry hsh --packager="$PACKAGER" "$HSH" "$ART/manual/$NVR.src.rpm" &&
         [ -f "$REPO/$ARCH/RPMS.hasher/$NVR.$ARCH.rpm" ] && [ -f "$REPO/SRPMS.hasher/$NVR.src.rpm" ]
 }
 t7_debuginfo() { [ -f "$REPO/$ARCH/RPMS.hasher/$PKG-debuginfo-1.0-alt1.$ARCH.rpm" ]; }

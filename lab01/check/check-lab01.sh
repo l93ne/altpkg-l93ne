@@ -38,6 +38,8 @@ check() {
 # Команда в изолированном окружении от имени сборщика и служебного суперпользователя
 inb() { hsh-run "$HSH" -- /bin/sh -c "$1"; }
 inr() { hsh-run --rooter "$HSH" -- /bin/sh -c "$1"; }
+# Команды hasher обращаются к сетевому репозиторию; при разовом сбое повторяем один раз
+retry() { "$@" || { sleep 10 && "$@"; }; }
 
 # --- Задание 2 ---
 t2_repos() { apt-repo | grep -q 'p11'; }
@@ -74,14 +76,14 @@ t4_groups() {
     [[ $g == *" hashman "* && $g == *" ${u}_a "* && $g == *" ${u}_b "* ]]
 }
 t4_init_log() { grep -q 'Created RPM build directory tree' logs/t4-hsh-init.log; }
-t4_init() { [ -d "$HSH/chroot" ] || hsh --initroot-only "$HSH"; }
+t4_init() { [ -d "$HSH/chroot" ] || retry hsh --initroot-only "$HSH"; }
 t4_users() {
     local b r
     b=$(inb 'id -un') && r=$(inr 'id -un') && [ "$b" = builder ] && [ "$r" = root ] && [ "$b" != "$r" ]
 }
 # shellcheck disable=SC2016
 t4_tree() { inb 'for d in BUILD SOURCES SPECS RPMS SRPMS; do test -d "$HOME/RPM/$d" || exit 1; done'; }
-t4_utility() { hsh-install "$HSH" tree && inb 'which tree'; }
+t4_utility() { retry hsh-install "$HSH" tree && inb 'which tree'; }
 
 # --- Задание 5 ---
 t5_build() {
@@ -115,7 +117,7 @@ t6_remove() { inr "rpm -e $PKG" && ! inr "which $PKG" && ! inr "$PKG"; }
 # --- Задание 7 ---
 # Проверки sisyphus_check, неприменимые при локальной сборке, отключаются явно,
 # чтобы результат не зависел от содержимого ~/.hasher/config
-t7_build() { hsh --no-sisyphus-check=packager,changelog,buildhost,gpg "$HSH" "$ART/manual/$NVR.src.rpm" && [ -f "$AUTO" ]; }
+t7_build() { retry hsh --no-sisyphus-check=packager,changelog,buildhost,gpg "$HSH" "$ART/manual/$NVR.src.rpm" && [ -f "$AUTO" ]; }
 t7_nvr() {
     [ "$(rpm -qp --qf '%{NAME}-%{VERSION}-%{RELEASE}' "$AUTO")" = "$(rpm -qp --qf '%{NAME}-%{VERSION}-%{RELEASE}' "$ART/manual/$NVR.noarch.rpm")" ]
 }
@@ -124,7 +126,7 @@ payload_sum() { rpm2cpio "$1" | cpio -i --quiet --to-stdout "./usr/bin/$PKG" | s
 t7_sha() { [ "$(payload_sum "$ART/manual/$NVR.noarch.rpm")" = "$(payload_sum "$AUTO")" ]; }
 t7_envs() {
     local host chroot only
-    [ -d "$HSH/chroot" ] || hsh --initroot-only "$HSH" || return 1
+    [ -d "$HSH/chroot" ] || retry hsh --initroot-only "$HSH" || return 1
     host=$(rpm -qa --qf '%{NAME}\n' | sort -u)
     chroot=$(inb "rpm -qa --qf '%{NAME}\n'" | sort -u)
     only=$(comm -23 <(echo "$host") <(echo "$chroot"))
