@@ -1,0 +1,16 @@
+<86>Oct 11 14:07:39 userdel[35788]: delete user 'rooter'
+<86>Oct 11 14:07:39 userdel[35788]: removed group 'rooter' owned by 'rooter'
+<86>Oct 11 14:07:39 userdel[35788]: removed shadow group 'rooter' owned by 'rooter'
+<86>Oct 11 14:07:39 groupadd[35799]: group added to /etc/group: name=rooter, GID=1001
+<86>Oct 11 14:07:39 groupadd[35799]: group added to /etc/gshadow: name=rooter
+<86>Oct 11 14:07:39 groupadd[35799]: new group: name=rooter, GID=1001
+<86>Oct 11 14:07:39 useradd[35810]: new user: name=rooter, UID=1001, GID=1001, home=/root, shell=/bin/bash, from=none
+<86>Oct 11 14:07:39 userdel[35823]: delete user 'builder'
+<86>Oct 11 14:07:39 userdel[35823]: removed shadow group 'builder' owned by 'builder'
+<86>Oct 11 14:07:39 groupadd[35833]: group added to /etc/group: name=builder, GID=1002
+<86>Oct 11 14:07:39 groupadd[35833]: group added to /etc/gshadow: name=builder
+<86>Oct 11 14:07:39 groupadd[35833]: new group: name=builder, GID=1002
+<86>Oct 11 14:07:39 useradd[35839]: new user: name=builder, UID=1002, GID=1002, home=/usr/src, shell=/bin/bash, from=none
+/usr/src/in/srpm/hello-l93ne-1.0-alt1.src.rpm: wrong packager in CHANGELOGNAME: l93ne <149338526+l93ne@users.noreply.github.com> 1.0-alt1
+sisyphus_check: check-changelog ERROR: changelog format violation
+hsh-rebuild: hello-l93ne-1.0-alt1.src.rpm: sisyphus_check failed.

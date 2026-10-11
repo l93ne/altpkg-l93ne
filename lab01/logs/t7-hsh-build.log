@@ -1,0 +1,47 @@
+<86>Oct 11 14:17:52 userdel[41311]: delete user 'rooter'
+<86>Oct 11 14:17:52 userdel[41311]: removed shadow group 'rooter' owned by 'rooter'
+<86>Oct 11 14:17:52 groupadd[41318]: group added to /etc/group: name=rooter, GID=1001
+<86>Oct 11 14:17:52 groupadd[41318]: group added to /etc/gshadow: name=rooter
+<86>Oct 11 14:17:52 groupadd[41318]: new group: name=rooter, GID=1001
+<86>Oct 11 14:17:52 useradd[41324]: new user: name=rooter, UID=1001, GID=1001, home=/root, shell=/bin/bash, from=none
+<86>Oct 11 14:17:52 userdel[41334]: delete user 'builder'
+<86>Oct 11 14:17:52 userdel[41334]: removed group 'builder' owned by 'builder'
+<86>Oct 11 14:17:52 userdel[41334]: removed shadow group 'builder' owned by 'builder'
+<86>Oct 11 14:17:52 groupadd[41341]: group added to /etc/group: name=builder, GID=1002
+<86>Oct 11 14:17:52 groupadd[41341]: group added to /etc/gshadow: name=builder
+<86>Oct 11 14:17:52 groupadd[41341]: new group: name=builder, GID=1002
+<86>Oct 11 14:17:52 useradd[41347]: new user: name=builder, UID=1002, GID=1002, home=/usr/src, shell=/bin/bash, from=none
+Building target platforms: x86_64
+Building for target x86_64
+Wrote: /usr/src/in/nosrpm/hello-l93ne-1.0-alt1.nosrc.rpm (w1.gzdio)
+Installing hello-l93ne-1.0-alt1.src.rpm
+Building target platforms: x86_64
+Building for target x86_64
+Executing(%install): /bin/sh -e /usr/src/tmp/rpmb-tmp.A3aZdP
++ umask 022
++ /bin/mkdir -p /usr/src/RPM/BUILD
++ cd /usr/src/RPM/BUILD
++ /bin/chmod -Rf u+rwX -- /usr/src/tmp/hello-l93ne-buildroot
++ :
++ /bin/rm -rf -- /usr/src/tmp/hello-l93ne-buildroot
++ PATH=/usr/libexec/rpm-build:/usr/src/bin:/usr/bin:/bin:/usr/local/bin:/usr/games
++ install -D -m 755 /usr/src/RPM/SOURCES/hello-l93ne-1.0.sh /usr/src/tmp/hello-l93ne-buildroot/usr/bin/hello-l93ne
++ /usr/lib/rpm/brp-alt
+Cleaning files in /usr/src/tmp/hello-l93ne-buildroot (auto)
+Verifying and fixing files in /usr/src/tmp/hello-l93ne-buildroot (binconfig,pkgconfig,libtool,desktop,gnuconfig)
+Checking contents of files in /usr/src/tmp/hello-l93ne-buildroot/ (default)
+Compressing files in /usr/src/tmp/hello-l93ne-buildroot (auto)
+Verifying ELF objects in /usr/src/tmp/hello-l93ne-buildroot (arch=normal,fhs=normal,lfs=relaxed,lint=relaxed,rpath=normal,stack=normal,textrel=normal,unresolved=normal)
+Splitting links to aliased files under /{,s}bin in /usr/src/tmp/hello-l93ne-buildroot
+Processing files: hello-l93ne-1.0-alt1
+Finding Provides (using /usr/lib/rpm/find-provides)
+Executing(+autodep): /bin/sh -e /usr/src/tmp/rpmb-autodep.mCiOBo
+find-provides: running scripts (debuginfo,lib,pam,perl,pkgconfig,python,python3,shell,sysusers)
+Finding Requires (using /usr/lib/rpm/find-requires)
+Executing(+autodep): /bin/sh -e /usr/src/tmp/rpmb-autodep.4rfYdc
+find-requires: running scripts (cpp,debuginfo,files,lib,pam,perl,pkgconfig,pkgconfiglib,python,python3,rpmlib,shebang,shell,static,symlinks,systemd-services)
+Requires: /bin/sh
+Wrote: /usr/src/RPM/SRPMS/hello-l93ne-1.0-alt1.src.rpm (w2.lzdio)
+Wrote: /usr/src/RPM/RPMS/noarch/hello-l93ne-1.0-alt1.noarch.rpm (w2.lzdio)
+0.55user 1.11system 0:02.76elapsed 60%CPU (0avgtext+0avgdata 6552maxresident)k
+8inputs+208outputs (0major+63235minor)pagefaults 0swaps

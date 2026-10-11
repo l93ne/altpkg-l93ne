@@ -1,0 +1,8 @@
+Name        : libpng16
+Version     : 1.6.56
+Release     : alt0.p11.1
+DistTag     : p11+412636.100.1.1
+Architecture: x86_64
+Install Date: Вс 11 окт 2026 16:47:46
+Group       : System/Libraries
+Size        : 327078

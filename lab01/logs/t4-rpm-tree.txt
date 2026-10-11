@@ -1,0 +1,9 @@
+/usr/src/RPM
+|-- BUILD
+|-- RPMS
+|   `-- noarch
+|-- SOURCES
+|-- SPECS
+`-- SRPMS
+
+7 directories

@@ -1,0 +1,4 @@
+# Сопровождающий, от имени которого собираются пакеты
+packager="l93ne <149338526+l93ne@users.noreply.github.com>"
+# Проверки sisyphus_check, неприменимые при локальной сборке
+no_sisyphus_check="packager,changelog,buildhost,gpg"

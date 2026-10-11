@@ -1,0 +1,19 @@
+lrwxrwxrwx    1 root    root                       15 мар 26  2026 /usr/bin/libpng-config -> libpng16-config
+-rwxr-xr-x    1 root    root                     2292 мар 26  2026 /usr/bin/libpng16-config
+drwxr-xr-x    2 root    root                        0 мар 26  2026 /usr/include/libpng16
+-rw-r--r--    1 root    root                   148525 мар 26  2026 /usr/include/libpng16/png.h
+-rw-r--r--    1 root    root                    22673 мар 26  2026 /usr/include/libpng16/pngconf.h
+-rw-r--r--    1 root    root                     8081 мар 26  2026 /usr/include/libpng16/pnglibconf.h
+lrwxrwxrwx    1 root    root                       14 мар 26  2026 /usr/include/png.h -> libpng16/png.h
+lrwxrwxrwx    1 root    root                       18 мар 26  2026 /usr/include/pngconf.h -> libpng16/pngconf.h
+lrwxrwxrwx    1 root    root                       21 мар 26  2026 /usr/include/pnglibconf.h -> libpng16/pnglibconf.h
+lrwxrwxrwx    1 root    root                       11 мар 26  2026 /usr/lib64/libpng.so -> libpng16.so
+lrwxrwxrwx    1 root    root                       19 мар 26  2026 /usr/lib64/libpng16.so -> libpng16.so.16.56.0
+lrwxrwxrwx    1 root    root                       11 мар 26  2026 /usr/lib64/pkgconfig/libpng.pc -> libpng16.pc
+-rw-r--r--    1 root    root                      237 мар 26  2026 /usr/lib64/pkgconfig/libpng16.pc
+drwxr-xr-x    2 root    root                        0 мар 26  2026 /usr/share/doc/libpng-1.6.56
+-rw-r--r--    1 root    root                      950 мар 26  2026 /usr/share/doc/libpng-1.6.56/TODO
+-rw-r--r--    1 root    root                    40399 мар 26  2026 /usr/share/doc/libpng-1.6.56/example.c
+-rw-r--r--    1 root    root                    57792 мар 26  2026 /usr/share/doc/libpng-1.6.56/libpng-manual.txt.xz
+-rw-r--r--    1 root    root                    62376 мар 26  2026 /usr/share/man/man3/libpng.3.xz
+-rw-r--r--    1 root    root                      400 мар 26  2026 /usr/share/man/man3/libpngpf.3.xz
