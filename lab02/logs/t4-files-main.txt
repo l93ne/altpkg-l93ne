@@ -1,0 +1,16 @@
+/usr/lib64/libform.so.6
+/usr/lib64/libform.so.6.5
+/usr/lib64/libmenu.so.6
+/usr/lib64/libmenu.so.6.5
+/usr/lib64/libncurses.so.6
+/usr/lib64/libncurses.so.6.5
+/usr/lib64/libpanel.so.6
+/usr/lib64/libpanel.so.6.5
+/usr/share/doc/ncurses-6.5.20250705
+/usr/share/doc/ncurses-6.5.20250705/ANNOUNCE
+/usr/share/doc/ncurses-6.5.20250705/Ada95.html
+/usr/share/doc/ncurses-6.5.20250705/NCURSES-Programming-HOWTO.html
+/usr/share/doc/ncurses-6.5.20250705/NEWS.xz
+/usr/share/doc/ncurses-6.5.20250705/README
+/usr/share/doc/ncurses-6.5.20250705/README.c++
+/usr/share/doc/ncurses-6.5.20250705/TO-DO

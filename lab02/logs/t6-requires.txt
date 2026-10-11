@@ -1,0 +1,10 @@
+/lib64/ld-linux-x86-64.so.2
+libc.so.6(GLIBC_2.2.5)(64bit)
+libc.so.6(GLIBC_2.3.4)(64bit)
+libc.so.6(GLIBC_2.34)(64bit)
+libc.so.6(GLIBC_2.7)(64bit)
+libncurses.so.6()(64bit) >= set:mi6NHG6g0s3Rqz2Dy67Gium8EXUFKYNeH0
+rpmlib(SetVersions)
+libtinfo.so.6()(64bit) >= set:mjWHGcASuq5yGCbb05vh
+rtld(GNU_HASH)
+rpmlib(PayloadIsLzma)

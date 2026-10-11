@@ -1,0 +1,1 @@
+<13>Oct 11 15:09:41 rpm: show-l93ne-1.0-alt1 1791731099 installed

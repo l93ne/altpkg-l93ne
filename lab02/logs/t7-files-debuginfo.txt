@@ -1,0 +1,6 @@
+/usr/lib/debug/.build-id/86
+/usr/lib/debug/.build-id/86/95f24ac39d146273a81a2bf64226981eb435e3
+/usr/lib/debug/.build-id/86/95f24ac39d146273a81a2bf64226981eb435e3.debug
+/usr/lib/debug/usr/bin/Show.debug
+/usr/src/debug/show-l93ne-1.0
+/usr/src/debug/show-l93ne-1.0/show.c

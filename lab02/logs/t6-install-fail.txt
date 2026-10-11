@@ -1,0 +1,2 @@
+error: Failed dependencies:
+	libncurses.so.6()(64bit) >= set:mi6NHG6g0s3Rqz2Dy67Gium8EXUFKYNeH0 is needed by show-l93ne-1.0-alt1.x86_64

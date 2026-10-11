@@ -18,3 +18,5 @@ SRPMS/
 *.o
 *~
 *.swp
+# исполняемый файл ЛР2
+lab02/sources/Show

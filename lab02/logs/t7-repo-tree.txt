@@ -1,0 +1,13 @@
+/home/user/hasher/repo
+├── SRPMS.hasher
+│   ├── hello-l93ne-1.0-alt1.src.rpm
+│   ├── hello-l93ne-1.0-alt2.src.rpm
+│   └── show-l93ne-1.0-alt1.src.rpm
+└── x86_64
+    └── RPMS.hasher
+        ├── hello-l93ne-1.0-alt1.noarch.rpm
+        ├── hello-l93ne-1.0-alt2.noarch.rpm
+        ├── show-l93ne-1.0-alt1.x86_64.rpm
+        └── show-l93ne-debuginfo-1.0-alt1.x86_64.rpm
+
+4 directories, 7 files

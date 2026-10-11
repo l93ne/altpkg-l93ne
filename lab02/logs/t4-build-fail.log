@@ -1,0 +1,18 @@
+<86>Oct 11 14:57:55 userdel[92923]: delete user 'rooter'
+<86>Oct 11 14:57:55 userdel[92923]: removed group 'rooter' owned by 'rooter'
+<86>Oct 11 14:57:55 groupadd[92931]: group added to /etc/group: name=rooter, GID=1001
+<86>Oct 11 14:57:55 groupadd[92931]: group added to /etc/gshadow: name=rooter
+<86>Oct 11 14:57:55 groupadd[92931]: new group: name=rooter, GID=1001
+<86>Oct 11 14:57:55 useradd[92938]: new user: name=rooter, UID=1001, GID=1001, home=/root, shell=/bin/bash, from=none
+<86>Oct 11 14:57:55 userdel[92950]: delete user 'builder'
+<86>Oct 11 14:57:55 userdel[92950]: removed group 'builder' owned by 'builder'
+<86>Oct 11 14:57:55 userdel[92950]: removed shadow group 'builder' owned by 'builder'
+<86>Oct 11 14:57:56 groupadd[92964]: group added to /etc/group: name=builder, GID=1002
+<86>Oct 11 14:57:56 groupadd[92964]: group added to /etc/gshadow: name=builder
+<86>Oct 11 14:57:56 groupadd[92964]: new group: name=builder, GID=1002
+<86>Oct 11 14:57:56 useradd[92973]: new user: name=builder, UID=1002, GID=1002, home=/usr/src, shell=/bin/bash, from=none
+/usr/src/in/srpm/hello-l93ne-1.0-alt1.src.rpm: wrong PACKAGER: l93ne <149338526+l93ne@users.noreply.github.com>
+sisyphus_check: check-packager ERROR: packager name violation
+/usr/src/in/srpm/hello-l93ne-1.0-alt1.src.rpm: wrong packager in CHANGELOGNAME: l93ne <149338526+l93ne@users.noreply.github.com> 1.0-alt1
+sisyphus_check: check-changelog ERROR: changelog format violation
+hsh-rebuild: hello-l93ne-1.0-alt1.src.rpm: sisyphus_check failed.

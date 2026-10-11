@@ -113,7 +113,9 @@ t6_run() {
 t6_remove() { inr "rpm -e $PKG" && ! inr "which $PKG" && ! inr "$PKG"; }
 
 # --- Задание 7 ---
-t7_build() { hsh "$HSH" "$ART/manual/$NVR.src.rpm" && [ -f "$AUTO" ]; }
+# Проверки sisyphus_check, неприменимые при локальной сборке, отключаются явно,
+# чтобы результат не зависел от содержимого ~/.hasher/config
+t7_build() { hsh --no-sisyphus-check=packager,changelog,buildhost,gpg "$HSH" "$ART/manual/$NVR.src.rpm" && [ -f "$AUTO" ]; }
 t7_nvr() {
     [ "$(rpm -qp --qf '%{NAME}-%{VERSION}-%{RELEASE}' "$AUTO")" = "$(rpm -qp --qf '%{NAME}-%{VERSION}-%{RELEASE}' "$ART/manual/$NVR.noarch.rpm")" ]
 }

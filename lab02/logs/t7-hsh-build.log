@@ -1,0 +1,87 @@
+<86>Oct 11 15:10:47 userdel[111782]: delete user 'rooter'
+<86>Oct 11 15:10:47 userdel[111782]: removed group 'rooter' owned by 'rooter'
+<86>Oct 11 15:10:47 userdel[111782]: removed shadow group 'rooter' owned by 'rooter'
+<86>Oct 11 15:10:48 groupadd[111794]: group added to /etc/group: name=rooter, GID=1001
+<86>Oct 11 15:10:48 groupadd[111794]: group added to /etc/gshadow: name=rooter
+<86>Oct 11 15:10:48 groupadd[111794]: new group: name=rooter, GID=1001
+<86>Oct 11 15:10:48 useradd[111801]: new user: name=rooter, UID=1001, GID=1001, home=/root, shell=/bin/bash, from=none
+<86>Oct 11 15:10:48 userdel[111811]: delete user 'builder'
+<86>Oct 11 15:10:48 userdel[111811]: removed shadow group 'builder' owned by 'builder'
+<86>Oct 11 15:10:48 groupadd[111818]: group added to /etc/group: name=builder, GID=1002
+<86>Oct 11 15:10:48 groupadd[111818]: group added to /etc/gshadow: name=builder
+<86>Oct 11 15:10:48 groupadd[111818]: new group: name=builder, GID=1002
+<86>Oct 11 15:10:48 useradd[111824]: new user: name=builder, UID=1002, GID=1002, home=/usr/src, shell=/bin/bash, from=none
+<13>Oct 11 15:10:54 rpmi: libncurses6-6.5.20250705-alt1 p11+414777.100.1.1 1775807998 installed
+<13>Oct 11 15:10:54 rpmi: libtinfo-devel-6.5.20250705-alt1 p11+414777.100.1.1 1775807998 installed
+<13>Oct 11 15:10:55 rpmi: libncurses-devel-6.5.20250705-alt1 p11+414777.100.1.1 1775807998 installed
+Building target platforms: x86_64
+Building for target x86_64
+Wrote: /usr/src/in/nosrpm/show-l93ne-1.0-alt1.nosrc.rpm (w1.gzdio)
+Installing show-l93ne-1.0-alt1.src.rpm
+Building target platforms: x86_64
+Building for target x86_64
+Executing(%prep): /bin/sh -e /usr/src/tmp/rpmb-tmp.BIjIr3
++ umask 022
++ /bin/mkdir -p /usr/src/RPM/BUILD
++ cd /usr/src/RPM/BUILD
++ cd /usr/src/RPM/BUILD
++ rm -rf show-l93ne-1.0
++ echo 'Source #0 (show-l93ne-1.0.tar.gz):'
+Source #0 (show-l93ne-1.0.tar.gz):
++ /usr/bin/gzip -dc /usr/src/RPM/SOURCES/show-l93ne-1.0.tar.gz
++ /bin/tar -xf -
++ cd show-l93ne-1.0
++ /bin/chmod -c -Rf u+rwX,go-w .
++ exit 0
+Executing(%build): /bin/sh -e /usr/src/tmp/rpmb-tmp.8SZGu7
++ umask 022
++ /bin/mkdir -p /usr/src/RPM/BUILD
++ cd /usr/src/RPM/BUILD
++ cd show-l93ne-1.0
++ make -j3 'CFLAGS=-pipe -frecord-gcc-switches -Wall -g -O2 -flto=auto'
+make: Entering directory '/usr/src/RPM/BUILD/show-l93ne-1.0'
+gcc -pipe -frecord-gcc-switches -Wall -g -O2 -flto=auto show.c -lncurses -o Show
+make: Leaving directory '/usr/src/RPM/BUILD/show-l93ne-1.0'
++ exit 0
+Executing(%install): /bin/sh -e /usr/src/tmp/rpmb-tmp.1FNkLB
++ umask 022
++ /bin/mkdir -p /usr/src/RPM/BUILD
++ cd /usr/src/RPM/BUILD
++ /bin/chmod -Rf u+rwX -- /usr/src/tmp/show-l93ne-buildroot
++ :
++ /bin/rm -rf -- /usr/src/tmp/show-l93ne-buildroot
++ PATH=/usr/libexec/rpm-build:/usr/src/bin:/usr/bin:/bin:/usr/local/bin:/usr/games
++ cd show-l93ne-1.0
++ install -D -m 755 Show /usr/src/tmp/show-l93ne-buildroot/usr/bin/Show
++ /usr/lib/rpm/brp-alt
+Cleaning files in /usr/src/tmp/show-l93ne-buildroot (auto)
+Verifying and fixing files in /usr/src/tmp/show-l93ne-buildroot (binconfig,pkgconfig,libtool,desktop,gnuconfig)
+Checking contents of files in /usr/src/tmp/show-l93ne-buildroot/ (default)
+Compressing files in /usr/src/tmp/show-l93ne-buildroot (auto)
+Verifying ELF objects in /usr/src/tmp/show-l93ne-buildroot (arch=normal,fhs=normal,lfs=relaxed,lint=relaxed,rpath=normal,stack=normal,textrel=normal,unresolved=normal)
+Splitting links to aliased files under /{,s}bin in /usr/src/tmp/show-l93ne-buildroot
+Processing files: show-l93ne-1.0-alt1
+Finding Provides (using /usr/lib/rpm/find-provides)
+Executing(+autodep): /bin/sh -e /usr/src/tmp/rpmb-autodep.6YOnD2
+find-provides: running scripts (debuginfo,lib,pam,perl,pkgconfig,python,python3,shell,sysusers)
+Finding Requires (using /usr/lib/rpm/find-requires)
+Executing(+autodep): /bin/sh -e /usr/src/tmp/rpmb-autodep.j0umUr
+find-requires: running scripts (cpp,debuginfo,files,lib,pam,perl,pkgconfig,pkgconfiglib,python,python3,rpmlib,shebang,shell,static,symlinks,systemd-services)
+Requires: /lib64/ld-linux-x86-64.so.2, libc.so.6(GLIBC_2.2.5)(64bit), libc.so.6(GLIBC_2.3.4)(64bit), libc.so.6(GLIBC_2.34)(64bit), libc.so.6(GLIBC_2.7)(64bit), libncurses.so.6()(64bit) >= set:mi6NHG6g0s3Rqz2Dy67Gium8EXUFKYNeH0, libtinfo.so.6()(64bit) >= set:mjWHGcASuq5yGCbb05vh, rtld(GNU_HASH)
+Requires(rpmlib): rpmlib(SetVersions)
+Finding debuginfo files (using /usr/lib/rpm/find-debuginfo-files)
+Executing(+autodep): /bin/sh -e /usr/src/tmp/rpmb-autodep.0Kr1g6
+Creating show-l93ne-debuginfo package
+Processing files: show-l93ne-debuginfo-1.0-alt1
+Finding Provides (using /usr/lib/rpm/find-provides)
+Executing(+autodep): /bin/sh -e /usr/src/tmp/rpmb-autodep.id2Ubk
+find-provides: running scripts (debuginfo)
+Finding Requires (using /usr/lib/rpm/find-requires)
+Executing(+autodep): /bin/sh -e /usr/src/tmp/rpmb-autodep.TVFLsf
+find-requires: running scripts (debuginfo)
+Requires: show-l93ne = 1.0-alt1, /usr/lib/debug/lib64/ld-linux-x86-64.so.2.debug, debug64(libc.so.6), debug64(libncurses.so.6), debug64(libtinfo.so.6)
+Wrote: /usr/src/RPM/SRPMS/show-l93ne-1.0-alt1.src.rpm (w2.lzdio)
+Wrote: /usr/src/RPM/RPMS/x86_64/show-l93ne-1.0-alt1.x86_64.rpm (w2.lzdio)
+Wrote: /usr/src/RPM/RPMS/x86_64/show-l93ne-debuginfo-1.0-alt1.x86_64.rpm (w2.lzdio)
+1.44user 2.28system 0:07.18elapsed 51%CPU (0avgtext+0avgdata 26016maxresident)k
+0inputs+1104outputs (0major+160222minor)pagefaults 0swaps
